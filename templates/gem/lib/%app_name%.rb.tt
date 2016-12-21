@@ -1,0 +1,5 @@
+require "<%= app_name %>/version"
+
+module <%= Thor::Util.camel_case(app_name) %>
+  # Your code goes here...
+end

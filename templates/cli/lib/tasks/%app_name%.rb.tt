@@ -1,0 +1,18 @@
+module <%= Thor::Util.camel_case(app_name) %>
+  def self.included(base)
+    base.class_eval do
+      desc "<%= Thor::Util.camel_case(app_name) %> [options]", "<%= Thor::Util.camel_case(app_name) %> command"
+      option :example, :type => :string, :aliases => "-e"
+      long_desc <<-LONGDESC
+      Example Thor task that can be used to run with bin/<%= Thor::Util.camel_case(app_name) %>
+
+      <%= Thor::Util.camel_case(app_name) %> -e <example>
+      LONGDESC
+      def <%= Thor::Util.camel_case(app_name) %>
+        puts "<%= Thor::Util.camel_case(app_name) %> is a templated method,"
+        puts "make adjustments as necessary to the tasks you want included"
+      end
+
+    end
+  end
+end
