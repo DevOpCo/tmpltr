@@ -6,12 +6,12 @@ require '<%= app_name %>/version'
 Gem::Specification.new do |spec|
   spec.name          = "<%= app_name %>"
   spec.version       = <%= Thor::Util.camel_case(app_name) %>::VERSION
-  spec.authors       = ["Jeremy Taylor"]
-  spec.email         = ["jeremy.taylor@vitals.com"]
+  spec.authors       = ["<%= @author_name %>"]
+  spec.email         = ["<%= @author_email %>"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = "<%= @spec_summary || %q{TODO: Write a short summary, because Rubygems requires one.} %>"
+  spec.description   = "<%= @spec_description || %q{TODO: Write a longer description or delete this line.} %>"
+  spec.homepage      = "<%= @spec_homepage || "TODO: Put your gem's website or public repo URL here." %>"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
@@ -30,6 +30,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.13"
-  spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "thor", "~> 0.19"
   spec.add_development_dependency "rspec", "~> 3.0"
 end
